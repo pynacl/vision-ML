@@ -56,7 +56,7 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         
         guard let pixelBuffer: CVPixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return }
         
-        // make sure to go download the models at https://developer.apple.com/machine-learning/
+        // models available at https://developer.apple.com/machine-learning/
         guard let model = try? VNCoreMLModel(for: Resnet50().model) else { return }
         let request = VNCoreMLRequest(model: model) { (finishedReq, err) in
             
